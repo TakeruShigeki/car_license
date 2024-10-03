@@ -24,5 +24,6 @@ Route::get('create_quiz',[QuizController::class,'create'])
 ->name('createQuiz');
 Route::get('car_quiz_index',[QuizController::class,'carQuizIndex'])
 ->name('carQuizIndex');
-Route::get('store_quiz',[QuizController::class,'store'])
+Route::post('store_quiz',[QuizController::class,'store'])
 ->name('storeQuiz');
+
