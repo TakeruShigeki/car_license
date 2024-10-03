@@ -25,6 +25,14 @@
             </label>
             </div>
         </div>
+        
+            <div class="flex justify-center items-center mt-10">
+                <button class="bg-gradient-to-r from-teal-400 to-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                送信
+                </button>
+            </div>
+        
+        
     </div>
 
         
