@@ -40,7 +40,7 @@ class QuizController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Quiz $quiz)
+    public function checkAnswer(Quiz $quiz)
     {
         
     }
