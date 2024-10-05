@@ -26,5 +26,7 @@ Route::get('car_quiz_index',[QuizController::class,'carQuizIndex'])
 ->name('carQuizIndex');
 Route::post('store_quiz',[QuizController::class,'store'])
 ->name('storeQuiz');
+Route::get('ajax_answer_update/{answer}/{quiz_id}', [QuizController::class, 'ajaxAnswerUpdate'])
+->name('ajaxAnswerUpdate');
 
 

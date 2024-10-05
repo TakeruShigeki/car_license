@@ -37,13 +37,22 @@ class QuizController extends Controller
     
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function checkAnswer(Quiz $quiz)
+    // 正誤判定↓
+    public function ajaxAnswerUpdate($answer,$quiz_id,Quiz $quiz)
     {
-        
+            $item =Quiz::find($quiz_id);
+        if($answer==$item->kind){
+            $answer_flag=1;
+        }else{
+            $answer_flag=0;
+        }
+        return [
+            'answer_flag' => $answer_flag,
+            'quiz_id' => $quiz_id
+        ];
+
     }
+
 
     /**
      * Show the form for editing the specified resource.
