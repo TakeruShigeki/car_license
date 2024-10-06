@@ -32,22 +32,6 @@ export const ajax = function () {
                 $(`#clear_${quiz_id}`).addClass("hidden");
                 console.log("不正解");
             }
-            // if (res[0] == 400) {
-            //   // 変化なし
-            // } else if (res[0] == 1) {
-            //   a.find(".check_on").removeClass("hidden");
-            //   a.find(".check_out").addClass("hidden");
-            // } else if (res[0] == 0) {
-            //   a.find(".check_on").addClass("hidden");
-            //   a.find(".check_out").removeClass("hidden");
-            // }
-    
-    
-            // $(".x-message").addClass("hidden");
-            // $(".x-input-error").addClass("hidden");
-            // $("#message_ajax").parent().parent().removeClass("hidden");
-            // $("#message_ajax").removeClass("hidden");
-            // $("#message_ajax").html(res[1]);
     
         })
           //通信が失敗したとき
@@ -57,3 +41,5 @@ export const ajax = function () {
         })
     });
     }
+
+    

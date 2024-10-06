@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     use HasFactory;
+
+    public function favorite() {
+        return $this->belongsTo(Favorite::class);
+    }
     protected $fillable = [
         'quiz',
         'kind',

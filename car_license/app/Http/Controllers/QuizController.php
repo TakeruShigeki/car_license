@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
+use App\Models\Favorite;
 use Illuminate\Http\Request;
 
 
@@ -38,7 +39,7 @@ class QuizController extends Controller
     }
 
     // 正誤判定↓
-    public function ajaxAnswerUpdate($answer,$quiz_id,Quiz $quiz)
+    public function ajaxAnswer($answer,$quiz_id,Quiz $quiz)
     {
             $item =Quiz::find($quiz_id);
         if($answer==$item->kind){
@@ -57,18 +58,49 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Quiz $quiz)
-    {
-        //
+    public function ajaxQuizUpdate($quiz_id)
+{
+    // 該当のクイズに対するお気に入り情報を取得
+    $favorite = Favorite::where('quiz_id', $quiz_id)->where('user_id', auth()->user()->id)->first();
+
+    if ($favorite == null) {
+        // 初めてボタンが押された場合（新しいレコード作成）
+        $favorite = new Favorite();
+        $favorite->quiz_id = $quiz_id;
+        $favorite->user_id = auth()->user()->id;
+        $favorite->favorite_flag = 1; // お気に入り状態にする
+        $favorite->save();
+    } else {
+        // 2回目以降ボタンが押された場合（既存レコードの更新）
+        if ($favorite->favorite_flag == 1) {
+            $favorite->favorite_flag = 0; // お気に入り解除
+        } else {
+            $favorite->favorite_flag = 1; // お気に入り登録
+        }
+        $favorite->save(); // 変更を保存
     }
+
+    // 現在の状態を返す
+    return $favorite->favorite_flag;
+}
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Quiz $quiz)
+    public function favoriteQuizIndex()
     {
-        //
+        // 全クイズを取得
+        $quizzes = Quiz::all();
+        
+        // ログインユーザーのお気に入りを取得
+        $user= auth()->user();
+        $favorites = $user->favorite;
+    
+        // ビューにデータを渡して表示
+        return view('car_quiz.favorite', compact("quizzes", "favorites"));
     }
+    
 
     /**
      * Remove the specified resource from storage.

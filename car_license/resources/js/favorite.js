@@ -1,0 +1,46 @@
+export const favorite = function () {
+    $('.favorite_button').on('click', function () {
+    let a = $(this);
+    console.log(a.attr('title'));
+        $.ajax({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+        url: a.attr('title'), 
+          //formのaction要素を参照
+          type: "get",  //formのmethod要素を参照
+          // data: form.serialize(),     //formで送信している内容を送る
+        })
+        
+          //通信が成功した時
+        .done((res) => {
+            console.log(res);
+        //     if (res == 1) {
+        //       // 黄色にする
+        //     $(this).addClass("bg-yellow-500");
+        //     console.log("お気に入りに追加されました");
+        // } else if(res == 0) {
+        //       // 色をなくす（背景色をリセットし、文字色を赤にする）
+        //       $(this).addClass("bg-gray-500"); // 色をリセット
+        //     console.log("お気に入りから外れました");
+        // }
+
+        
+            if (res == 1) {
+                // 正解の場合、クイズIDに基づいて特定のクラスの要素の色を変更
+                $(this).css("background-color","yellow");
+                console.log("お気に入りに追加されました");
+            } else if (res == 0) {
+                // 不正解の場合
+                $(this).css("background-color", "");
+                console.log("お気に入りから外れました");
+            }
+    
+        })
+          //通信が失敗したとき
+        .fail((error) => {
+            console.log("失敗");
+    
+        })
+    });
+    }

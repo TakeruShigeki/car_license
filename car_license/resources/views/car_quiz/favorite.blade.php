@@ -1,8 +1,12 @@
 <x-app-layout>
 
     <div class="bg-gradient-to-r from-blue-100 via-orange-100 to-yellow-100">
-        @foreach ($quizzes as $quiz)
+        @if($favorites==isEmpty())
+        <p>お気に入りがありません</p>
+        @else
+        @foreach ($favorites as $quiz)
         <div class="ml-64 leading-[6rem]">
+            
         <span class="hover:text-blue-500 text-4xl font-semibold text-shadow1">・{{$quiz->quiz}}</span>
 
         @php
@@ -54,5 +58,5 @@
             </div> --}}
         </div>
         @endforeach
-
+        @endif
 </x-app-layout>

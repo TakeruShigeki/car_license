@@ -6,13 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('quizzes', function (Blueprint $table) {
+        Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->longText('quiz')->nullable(false);
-            $table->boolean('kind')->nullable(false)->default(0);
+            $table->foreignId('quiz_id')->nullable(false);
+            $table->foreignId('user_id')->nullable(false);
             $table->boolean('favorite_flag')->nullable(false)->default(0);
             $table->timestamps();
         });
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('quizzes');
+        Schema::dropIfExists('favorites');
     }
 };
