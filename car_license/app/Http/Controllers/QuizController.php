@@ -55,12 +55,9 @@ class QuizController extends Controller
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // ↓お気に入り
     public function ajaxQuizUpdate($quiz_id)
 {
-    // 該当のクイズに対するお気に入り情報を取得
     $favorite = Favorite::where('quiz_id', $quiz_id)->where('user_id', auth()->user()->id)->first();
 
     if ($favorite == null) {
@@ -77,7 +74,7 @@ class QuizController extends Controller
         } else {
             $favorite->favorite_flag = 1; // お気に入り登録
         }
-        $favorite->save(); // 変更を保存
+        $favorite->save();
     }
 
     // 現在の状態を返す
@@ -90,15 +87,14 @@ class QuizController extends Controller
      */
     public function favoriteQuizIndex()
     {
-        // 全クイズを取得
-        $quizzes = Quiz::all();
-        
-        // ログインユーザーのお気に入りを取得
-        $user= auth()->user();
-        $favorites = $user->favorite;
+        $userId = auth()->user()->id;
+
     
-        // ビューにデータを渡して表示
-        return view('car_quiz.favorite', compact("quizzes", "favorites"));
+    $favorite = Favorite::where('user_id', $userId)
+        ->where('favorite_flag', 1) 
+        ->pluck('quiz_id'); 
+    $quizzes = Quiz::whereIn('id', $favorite)->get();
+    return view('car_quiz.favorite', compact('quizzes'));
     }
     
 

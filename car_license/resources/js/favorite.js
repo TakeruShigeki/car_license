@@ -15,15 +15,7 @@ export const favorite = function () {
           //通信が成功した時
         .done((res) => {
             console.log(res);
-        //     if (res == 1) {
-        //       // 黄色にする
-        //     $(this).addClass("bg-yellow-500");
-        //     console.log("お気に入りに追加されました");
-        // } else if(res == 0) {
-        //       // 色をなくす（背景色をリセットし、文字色を赤にする）
-        //       $(this).addClass("bg-gray-500"); // 色をリセット
-        //     console.log("お気に入りから外れました");
-        // }
+        
 
         
             if (res == 1) {
