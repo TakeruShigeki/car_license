@@ -7,23 +7,27 @@
                         
                         <div class="p-5">
                             @php
-                        $color = ''; 
-                        if ($quiz->favorite_flag== 1) {
-                            $color = 'color:orange';
-                        }else if($quiz->favorite_flag== 0){
-                            $color = 'color:';
+                        $user = Auth()->user();
+                        $color = '';
+                        if ($user->id==$quiz->quiz_id) {
+                            if ($quiz->favorite_flag==1) {
+                                $color = 'color:orange';
+                            }elseif ($quiz->favorite_flag==0) {
+                                $color = 'color:';
+                            }
                         }
                         @endphp
-                        
+                        <!-- お気に入りボタン -->
                         <button class="favorite_button font-bold underline decoration-sky-500 ml-0" 
                             style="{{ $color }}" title="{{ route('ajaxQuizUpdate', [$quiz->id]) }}">
                             <span class=" duration-300 bg-gradient-to-r from-blue-200 to-orange-200 hover:shadow-lg rounded-full px-4 py-2 transform hover:scale-105">お気に入り</span>
                         </button>
                         </div>
-                        <span class=" text-4xl font-semibold ">・{{$quiz->quiz}}</span>
+                        <!-- 問題テキスト -->
+                        <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl">・{{$quiz->quiz}}</span>
                         
                     
-            
+            <!-- 回答ボタンエリア -->
             <div class="container mx-auto py-8">
                 <div class="flex justify-center space-x-10 mt-6 answer">
                     <!-- 〇ボタン -->

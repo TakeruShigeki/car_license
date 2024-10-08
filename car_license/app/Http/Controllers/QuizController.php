@@ -15,7 +15,7 @@ class QuizController extends Controller
     }
 
     public function carQuizIndex()
-    {
+    {   
         $quizzes = Quiz::all();
         return view('car_quiz.index', compact("quizzes"));
     }

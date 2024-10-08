@@ -25,7 +25,7 @@
                 </button>
                 <br>
                 <br>
-                <span class=" text-4xl font-semibold">・{{$quiz->quiz}}</span>
+                <span class="text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl font-semibold">・{{$quiz->quiz}}</span>
                     
                     @php
                         $color = ($quiz->favorite_flag == 1) ? 'background-color:yellow' : 'background-color:transparent';
