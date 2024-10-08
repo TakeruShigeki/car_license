@@ -33,3 +33,6 @@ Route::get('ajax_quiz_update/{quiz_id}/', [QuizController::class, 'ajaxQuizUpdat
 Route::get('favorite_quiz_index',[QuizController::class,'favoriteQuizIndex'])
 ->name('favoriteQuizIndex');
 
+
+
+

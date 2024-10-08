@@ -10,9 +10,11 @@ class Quiz extends Model
     use HasFactory;
 
     public function favorite() {
-        return $this->belongsTo(Favorite::class);
+        return $this->hasOne(Favorite::class);
     }
-    protected $fillable = [
+    public function user() {
+        return $this->hasMany(User::class);
+    }    protected $fillable = [
         'quiz',
         'kind',
     ];

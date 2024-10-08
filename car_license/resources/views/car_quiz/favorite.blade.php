@@ -1,21 +1,31 @@
 <x-app-layout>
+    <?php $user=Auth()->user(); ?>
     <div class="container mx-auto py-8 px-4 ">
-    <div class="bg-gradient-to-r from-blue-100 via-orange-100 to-yellow-100 p-8">
-        <h1 class="text-3xl font-bold text-center mb-6">お気に入りクイズ</h1>
+        <div class="bg-gradient-to-r from-blue-100 via-orange-100 to-yellow-100 p-8">
+    <h1 class="text-3xl font-bold text-center mb-6">お気に入りクイズ</h1>
+    @foreach ($quizzes as $quiz)
+    @if ($quiz->favorite)
+    @if($quiz->id==$quiz->favorite->quiz_id)
+    @if($quiz->favorite->favorite_flag==1)
+    @if($user->id==$quiz->favorite->user_id)
+    
+        
 
-        @if ($quizzes->isEmpty())
-            <p class="text-center text-lg">お気に入りのクイズがありません。</p>
-        @else
-            @foreach ($quizzes as $quiz)
             <div class="p-8 rounded-lg shadow-xl mb-6 ">
         
                 <div class="p-5">
                     @php
                 $color = ''; 
-                if ($quiz->favorite_flag== 1) {
-                    $color = 'color:orange';
-                }else if($quiz->favorite_flag== 0){
-                    $color = 'color:';
+                if ($quiz->favorite) {
+                    if($user->id== $quiz->favorite->user_id){
+                        if ($quiz->favorite->favorite_flag== 1) {
+                            $color = 'color:orange';
+                        }else if($quiz->favorite->favorite_flag== 0){
+                            $color = 'color:';
+                        }
+                    }else if(null==$quiz->favorite->user_id){
+                        $color = 'color:';
+                    }
                 }
                 @endphp
                     
@@ -57,10 +67,11 @@
                     </div>
             </div>
         </div>
-            
+            @endif
+            @endif
+            @endif
+            @endif
             @endforeach
-        @endif
-
     </div>
 </div>
 

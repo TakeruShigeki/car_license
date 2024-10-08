@@ -26,7 +26,7 @@ class QuizController extends Controller
     $quiz->kind = $request->kind;
     $quiz->save();
     $quizzes= Quiz::all();
-    return view('car_quiz.index' , compact("quizzes"));
+    return redirect()->route('',compact("quizzes"));
     
     }
 
@@ -79,21 +79,16 @@ class QuizController extends Controller
      */
     public function favoriteQuizIndex()
     {
-        $userId = auth()->user()->id;
-    
-    $favorite = Favorite::where('user_id', $userId)
-        ->where('favorite_flag', 1) 
-        ->pluck('quiz_id'); 
-    $quizzes = Quiz::whereIn('id', $favorite)->get();
-    return view('car_quiz.favorite', compact('quizzes'));
+        $quizzes = Quiz::all();
+        return view('car_quiz.favorite', compact("quizzes"));
     }
     
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Quiz $quiz)
+    public function destroyQuiz(Quiz $quiz)
     {
-        //
+        
     }
 }
