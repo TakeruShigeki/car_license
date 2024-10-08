@@ -20,11 +20,11 @@ export const favorite = function () {
         
             if (res == 1) {
                 // 正解の場合、クイズIDに基づいて特定のクラスの要素の色を変更
-                $(this).css("background-color","yellow");
+                $(this).css("color","orange");
                 console.log("お気に入りに追加されました");
             } else if (res == 0) {
                 // 不正解の場合
-                $(this).css("background-color", "");
+                $(this).css("color", "");
                 console.log("お気に入りから外れました");
             }
     

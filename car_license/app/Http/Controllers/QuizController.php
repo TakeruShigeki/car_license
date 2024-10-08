@@ -11,7 +11,7 @@ class QuizController extends Controller
 {
     public function create()
     {
-        return view('create', );
+        return view('create');
     }
 
     public function carQuizIndex()
@@ -19,14 +19,6 @@ class QuizController extends Controller
         $quizzes = Quiz::all();
         return view('car_quiz.index', compact("quizzes"));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
     $quiz = new Quiz();
@@ -88,7 +80,6 @@ class QuizController extends Controller
     public function favoriteQuizIndex()
     {
         $userId = auth()->user()->id;
-
     
     $favorite = Favorite::where('user_id', $userId)
         ->where('favorite_flag', 1) 
