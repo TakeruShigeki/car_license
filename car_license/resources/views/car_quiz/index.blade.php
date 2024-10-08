@@ -30,10 +30,15 @@
                     </div>
                     <!-- 問題テキスト -->
                     <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl">・{{$quiz->quiz}}</span>
-                    
-                
         <!-- 回答ボタンエリア -->
+        <div class="text-center">
+            <br>
+            <br>
+            <p class="hidden font-bold text-green-500" id='clear_{{$quiz->id}}'>正解</p>
+            <p class="hidden font-bold text-rose-500" id='notclear_{{$quiz->id}}'>不正解</p>
+        </div>
         <div class="container mx-auto py-8">
+            
             <div class="flex justify-center space-x-10 mt-6 answer">
                 <!-- 〇ボタン -->
                 <div class="flex items-center">
@@ -49,11 +54,6 @@
                     <button class="answer_button bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out" title="{{ route('ajaxAnswer',[$answer, $quiz->id]) }}">
                         ✕
                     </button>
-                </div>
-
-                <div>
-                    <p class="hidden" id='clear_{{$quiz->id}}'>正解</p>
-                    <p class="hidden" id='notclear_{{$quiz->id}}'>不正解</p>
                 </div>
             </div>
         </div>

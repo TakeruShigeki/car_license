@@ -42,7 +42,13 @@
                     @endphp
 
                 </div>
-                <div class="container mx-auto py-8">
+                <div class="text-center">
+                    <br>
+                    <br>
+                    <p class="hidden font-bold  text-green-500" id='clear_{{$quiz->id}}'>正解</p>
+                    <p class="hidden font-bold  text-rose-500" id='notclear_{{$quiz->id}}'>不正解</p>
+                </div>
+                <div class="container mx-auto py-8 sm:px-4">
                     <div class="flex justify-center space-x-10 mt-6 answer">
                         <!-- 〇ボタン -->
                         <div class="flex items-center">
@@ -60,10 +66,7 @@
                             </button>
                         </div>
             
-                        <div>
-                            <p class="hidden" id='clear_{{$quiz->id}}'>正解</p>
-                            <p class="hidden" id='notclear_{{$quiz->id}}'>不正解</p>
-                        </div>
+                        
                     </div>
             </div>
         </div>
