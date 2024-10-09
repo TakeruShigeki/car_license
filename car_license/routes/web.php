@@ -32,6 +32,10 @@ Route::get('ajax_quiz_update/{quiz_id}/', [QuizController::class, 'ajaxQuizUpdat
 ->name('ajaxQuizUpdate');
 Route::get('favorite_quiz_index',[QuizController::class,'favoriteQuizIndex'])
 ->name('favoriteQuizIndex');
+Route::delete('/delete/{quiz_id}',[QuizController::class,'delete'])
+->name('delete');
+
+
 
 
 

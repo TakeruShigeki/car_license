@@ -55,6 +55,11 @@
                         ✕
                     </button>
                 </div>
+                <form action="{{ route('delete', $quiz->id) }}" method="POST" onsubmit="return checkDelete('本当に削除しますか？');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded">削除</button>
+                </form>
             </div>
         </div>
     </div>

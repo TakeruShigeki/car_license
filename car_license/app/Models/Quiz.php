@@ -14,8 +14,11 @@ class Quiz extends Model
     }
     public function user() {
         return $this->hasMany(User::class);
+
+        
     }    protected $fillable = [
         'quiz',
         'kind',
     ];
+    
 }

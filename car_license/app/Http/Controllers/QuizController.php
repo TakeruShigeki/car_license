@@ -83,12 +83,10 @@ class QuizController extends Controller
         return view('car_quiz.favorite', compact("quizzes"));
     }
     
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroyQuiz(Quiz $quiz)
+    public function delete($quiz_id)
     {
-        
+
+        $quiz = Quiz::destroy($quiz_id);
+        return redirect()->route('carQuizIndex');
     }
 }
