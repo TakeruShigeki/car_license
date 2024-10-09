@@ -25,9 +25,10 @@
             </div>
         </div>
             <!-- 解説 -->
-            <label for="body"class="font-semibold leading-none mt-4 text-center text-4xl ">解説</label>
+            <div for="body"class="font-semibold leading-none mt-4 text-center text-4xl ">解説</div>
             <textarea name="commentary" class="mx-auto py-2 border border-gray-300 rounded-md " id="body" rows="5" style="width: 80%; max-width: 600px; margin: 0 auto; display: block;" >
             </textarea>
+        </div>
             
         
             <div class="flex justify-center items-center mt-10">

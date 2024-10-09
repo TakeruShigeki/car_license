@@ -9,8 +9,7 @@
     @if($quiz->favorite->favorite_flag==1)
     @if($user->id==$quiz->favorite->user_id)
     
-        
-
+    
             <div class="p-8 rounded-lg shadow-xl mb-6 ">
         
                 <div class="p-5">
@@ -46,7 +45,7 @@
                     <br>
                     <br>
                     <p class="hidden font-bold  text-green-500" id='clear_{{$quiz->id}}'>
-                        <br><br><span class="">{{$quiz->commentary}}正解</p>
+                        <br><br>正解<br><span class="">{{$quiz->commentary}}</p>
                     <p class="hidden font-bold  text-rose-500" id='notclear_{{$quiz->id}}'>不正解</p>
                 </div>
                 <div class="container mx-auto py-8 sm:px-4">
