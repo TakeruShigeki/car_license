@@ -6,8 +6,7 @@
         <form method="post" action="{{route('storeQuiz')}}" enctype="multipart/form-data">
         @csrf
         <textarea name="quiz" class="mx-auto py-2 border border-gray-300 rounded-md " id="body" rows="10" style="width: 80%; max-width: 600px; margin: 0 auto; display: block;" >
-        </textarea>
-        
+        </textarea> 
         <div class="flex justify-center space-x-10 mt-6">
             <!-- 〇ボタン -->
             <div class="flex items-center">
@@ -25,13 +24,18 @@
             </label>
             </div>
         </div>
+            <!-- 解説 -->
+            <label for="body"class="font-semibold leading-none mt-4 text-center text-4xl ">解説</label>
+            <textarea name="commentary" class="mx-auto py-2 border border-gray-300 rounded-md " id="body" rows="5" style="width: 80%; max-width: 600px; margin: 0 auto; display: block;" >
+            </textarea>
+            
         
             <div class="flex justify-center items-center mt-10">
                 <button class="bg-gradient-to-r from-teal-400 to-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
                 送信
                 </button>
             </div>
-        
+            
         
     </div>
 

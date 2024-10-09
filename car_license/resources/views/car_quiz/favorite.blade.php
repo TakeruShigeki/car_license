@@ -45,7 +45,8 @@
                 <div class="text-center">
                     <br>
                     <br>
-                    <p class="hidden font-bold  text-green-500" id='clear_{{$quiz->id}}'>正解</p>
+                    <p class="hidden font-bold  text-green-500" id='clear_{{$quiz->id}}'>
+                        <br><br><span class="">{{$quiz->commentary}}正解</p>
                     <p class="hidden font-bold  text-rose-500" id='notclear_{{$quiz->id}}'>不正解</p>
                 </div>
                 <div class="container mx-auto py-8 sm:px-4">

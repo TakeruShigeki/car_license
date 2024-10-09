@@ -24,11 +24,13 @@ class QuizController extends Controller
     $quiz = new Quiz();
     $quiz->quiz = $request->quiz;
     $quiz->kind = $request->kind;
+    $quiz->commentary = $request->commentary;
     $quiz->save();
     $quizzes= Quiz::all();
     return view('car_quiz.index',compact("quizzes"));
-    
     }
+
+
 
     // 正誤判定
     public function ajaxAnswer($answer,$quiz_id,Quiz $quiz)
@@ -71,6 +73,7 @@ class QuizController extends Controller
 // 削除機能
     public function favoriteQuizIndex()
     {
+        
         $quizzes = Quiz::all();
         return view('car_quiz.favorite', compact("quizzes"));
     }
