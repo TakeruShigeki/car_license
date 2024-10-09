@@ -19,9 +19,10 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
+Route::middleware(['auth', 'can:admin'])->group(function () {
 Route::get('create_quiz',[QuizController::class,'create'])
 ->name('createQuiz');
+});
 Route::get('car_quiz_index',[QuizController::class,'carQuizIndex'])
 ->name('carQuizIndex');
 Route::post('store_quiz',[QuizController::class,'store'])

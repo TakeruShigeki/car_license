@@ -80,8 +80,16 @@ class QuizController extends Controller
     
     public function delete($quiz_id)
     {
+        // まず、クイズを削除
+    Quiz::destroy($quiz_id);
 
-        $quiz = Quiz::destroy($quiz_id);
-        return redirect()->route('carQuizIndex');
+    // そのクイズに関連するFavoriteを削除
+    $favorite = Favorite::where('quiz_id', $quiz_id)->first();
+    if ($favorite) {
+        $favorite->delete(); // $favoriteインスタンスに対してdeleteを実行
+    }
+
+    // デバッグ用コードを削除し、リダイレクト
+    return redirect()->route('carQuizIndex');
     }
 }

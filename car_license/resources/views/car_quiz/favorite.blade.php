@@ -5,9 +5,9 @@
     <h1 class="text-3xl font-bold text-center mb-6">お気に入りクイズ</h1>
     @foreach ($quizzes as $quiz)
     @if ($quiz->favorite)
+    @if($user->id==$quiz->favorite->user_id)
     @if($quiz->id==$quiz->favorite->quiz_id)
     @if($quiz->favorite->favorite_flag==1)
-    @if($user->id==$quiz->favorite->user_id)
     
     
             <div class="p-8 rounded-lg shadow-xl mb-6 ">

@@ -10,9 +10,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         HOME
                     </x-nav-link>
+                    @can('admin')
                     <x-nav-link :href="route('createQuiz')" :active="request()->routeIs('createQuiz')">
                         問題作成
                     </x-nav-link>
+                    @endcan
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
