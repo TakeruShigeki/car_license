@@ -26,11 +26,11 @@ class QuizController extends Controller
     $quiz->kind = $request->kind;
     $quiz->save();
     $quizzes= Quiz::all();
-    return redirect()->route('',compact("quizzes"));
+    return view('car_quiz.index',compact("quizzes"));
     
     }
 
-    // 正誤判定↓
+    // 正誤判定
     public function ajaxAnswer($answer,$quiz_id,Quiz $quiz)
     {
             $item =Quiz::find($quiz_id);
@@ -47,20 +47,18 @@ class QuizController extends Controller
     }
 
 
-    // ↓お気に入り
+    //お気に入り
     public function ajaxQuizUpdate($quiz_id)
 {
     $favorite = Favorite::where('quiz_id', $quiz_id)->where('user_id', auth()->user()->id)->first();
 
     if ($favorite == null) {
-        // 初めてボタンが押された場合（新しいレコード作成）
         $favorite = new Favorite();
         $favorite->quiz_id = $quiz_id;
         $favorite->user_id = auth()->user()->id;
-        $favorite->favorite_flag = 1; // お気に入り状態にする
+        $favorite->favorite_flag = 1; 
         $favorite->save();
     } else {
-        // 2回目以降ボタンが押された場合（既存レコードの更新）
         if ($favorite->favorite_flag == 1) {
             $favorite->favorite_flag = 0; // お気に入り解除
         } else {
@@ -68,15 +66,9 @@ class QuizController extends Controller
         }
         $favorite->save();
     }
-
-    // 現在の状態を返す
     return $favorite->favorite_flag;
 }
-
-
-    /**
-     * Update the specified resource in storage.
-     */
+// 削除機能
     public function favoriteQuizIndex()
     {
         $quizzes = Quiz::all();
