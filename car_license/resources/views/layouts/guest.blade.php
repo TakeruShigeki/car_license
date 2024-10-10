@@ -12,9 +12,9 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.js', 'resources/js/app.css']) --}}
-        <link rel="stylesheet" href="/build/assets/app-C8TH9cMt.css">
-        <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
+        @vite(['resources/js/app.js', 'resources/css/app.css'])
+        {{-- <link rel="stylesheet" href="/build/assets/app-C8TH9cMt.css">
+        <script src="/build/assets/app-CSsv4iKa.js" type="module"></script> --}}
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
