@@ -15,7 +15,7 @@
         {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
         <link rel="stylesheet" href="/build/assets/app-Bme-jh6N.css">
         <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     </head>
     <body class="font-sans antialiased bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 min-h-screen  items-center justify-center">
         <div class="text-center mb-10 shadow-md">
