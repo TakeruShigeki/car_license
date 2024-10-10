@@ -23,7 +23,7 @@
                 Car License
             </h1>
         </div>
-    
+        
         <div class="max-w-4xl  mx-auto px-7.5 py-8 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 bg-opacity-80 rounded-2xl backdrop-blur-md shadow-md">
             <div class="text-center text-3xl font-extrabold text-stone-700/80 mb-8 ">
                 いつでもどこでも手軽に運転免許の勉強ができるサービスです
