@@ -14,8 +14,8 @@
         <!-- Scripts -->
         {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
         <link rel="stylesheet" href="/build/assets/app-C8TH9cMt.css">
-        <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        {{-- <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  --}}
     </head>
     <body class="font-sans antialiased bg-gradient-to-r from-blue-100 via-orange-100 to-yellow-100">
         <div class="">
