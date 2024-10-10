@@ -1,7 +1,7 @@
 <x-app-layout>
     <?php $user=Auth()->user(); ?>
     <div class="container mx-auto py-8 px-4 ">
-        <div class="bg-gradient-to-r from-blue-100 via-orange-100 to-yellow-100 p-8">
+        <div class="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 p-8">
     <h1 class="text-3xl font-bold text-center mb-6">お気に入りクイズ</h1>
     @foreach ($quizzes as $quiz)
     @if ($quiz->favorite)
