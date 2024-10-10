@@ -13,7 +13,10 @@ export default defineConfig({
     outDir: 'public/build',  
     manifest: true,          
     rollupOptions: {
-        input: 'resources/js/app.js',  
+        input: {
+            app: 'resources/js/app.js',   
+            style: 'resources/css/app.css' 
+            },
     },
     },
 });
