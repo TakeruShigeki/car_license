@@ -6,7 +6,9 @@
         
 
         <title>Laravel</title>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="/build/assets/app-C8TH9cMt.css">
+        <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
