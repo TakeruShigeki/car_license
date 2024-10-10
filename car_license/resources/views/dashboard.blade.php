@@ -1,7 +1,10 @@
 <x-app-layout>
 
+
+        
+
         <div class="min-h-screen
-        bg-no-repeat bg-cover bg-center">
+        bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400">
                 <div class="text-center pt-40">
                 <a href="{{route('carQuizIndex')}}">
 

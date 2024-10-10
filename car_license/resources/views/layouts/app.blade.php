@@ -8,12 +8,12 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link rel="preconnect" href="https://fonts.bunny.net"> 
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         
         <!-- Scripts -->
         {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
-        <link rel="stylesheet" href="/build/assets/app-CPGj_VFN.css">
+        <link rel="stylesheet" href="/build/assets/app-l3Xj1WLY.css">
         <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     </head>

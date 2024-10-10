@@ -1,4 +1,5 @@
 <x-app-layout>
+    <div class="min-h-screen bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400">
     <?php $user=Auth()->user(); ?>
     <div class="container mx-auto py-8 px-4 ">
         <div class="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 p-8">
@@ -74,6 +75,7 @@
             @endif
             @endforeach
     </div>
+</div>
 </div>
 
 </x-app-layout>
