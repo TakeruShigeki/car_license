@@ -9,14 +9,14 @@
                 <div class="text-center pt-40">
                 <a href="{{route('carQuizIndex')}}">
 
-                <span class="text-blue-600 text-5xl font-bold text-center my-20 hover:text-blue-500 text-shadow1">問題一覧</span>
+                <span class="text-stone-700/80 text-5xl font-bold text-center my-20 hover:text-zinc-400 text-shadow1">問題一覧</span>
         
                 </a>
                 </div>
         
                 <div class="text-center my-20">
                 <a href="{{route('favoriteQuizIndex')}}">
-                <span class="text-blue-600 text-5xl font-bold text-center my-20 hover:text-blue-500 text-shadow">お気に入り</span>
+                <span class="text-stone-700/80 text-5xl font-bold text-center my-20 hover:text-zinc-400 text-shadow">お気に入り</span>
                 </a>
                 </div>
         </div>

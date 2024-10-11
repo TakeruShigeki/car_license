@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container mx-auto py-8 px-4 ">
         <div class=" p-8">
-            <h1 class="text-3xl font-bold text-center mb-6 ">問題一覧</h1>
+            <h1 class="text-stone-700/80 text-3xl font-bold text-center mb-6 ">問題一覧</h1>
             @foreach ($quizzes as $quiz)
             <div class="p-8 rounded-lg shadow-xl mb-6 ">
                 
@@ -13,7 +13,7 @@
                     if ($quiz->favorite) {
                     if($user->id== $quiz->favorite->user_id){
                         if ($quiz->favorite->favorite_flag== 1) {
-                            $color = 'color:orange';
+                            $color = 'color:purple';
                         }else if($quiz->favorite->favorite_flag== 0){
                             $color = 'color:';
                         }
@@ -25,7 +25,7 @@
                     <!-- お気に入りボタン -->
                     <button class="favorite_button font-bold underline decoration-sky-500 ml-0" 
                         style="{{ $color }}" title="{{ route('ajaxQuizUpdate', [$quiz->id]) }}">
-                        <span class=" duration-300 bg-gradient-to-r from-blue-200 to-orange-200 hover:shadow-lg rounded-full px-4 py-2 transform hover:scale-105">お気に入り</span>
+                        <span class=" duration-300 bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 hover:shadow-lg rounded-full px-4 py-2 transform hover:scale-105">お気に入り</span>
                     </button>
                     </div>
                     <!-- 問題テキスト -->

@@ -20,7 +20,7 @@ export const favorite = function () {
         
             if (res == 1) {
                 // 正解の場合、クイズIDに基づいて特定のクラスの要素の色を変更
-                $(this).css("color","orange");
+                $(this).css("color","purple");
                 console.log("お気に入りに追加されました");
             } else if (res == 0) {
                 // 不正解の場合
