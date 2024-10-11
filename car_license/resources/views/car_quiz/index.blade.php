@@ -1,6 +1,4 @@
 <x-app-layout>
-<div class="min-h-screen
-        bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400">
     <div class="container mx-auto py-8 px-4 ">
         <div class=" p-8">
             <h1 class="text-3xl font-bold text-center mb-6 ">問題一覧</h1>
@@ -31,7 +29,7 @@
                     </button>
                     </div>
                     <!-- 問題テキスト -->
-                    <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl">・{{$quiz->quiz}}</span>
+                    <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-2xl">・{{$quiz->quiz}}</span>
         <!-- 回答ボタンエリア -->
         
         <div class="text-center">
@@ -77,5 +75,4 @@
         
         </div>
     </div>
-</div>
 </x-app-layout>
