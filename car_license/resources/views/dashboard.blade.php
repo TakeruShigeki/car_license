@@ -1,4 +1,5 @@
 <x-app-layout>
+        
 
 
         
@@ -15,7 +16,7 @@
         
                 <div class="text-center my-20">
                 <a href="{{route('favoriteQuizIndex')}}">
-                <sapn class="text-blue-600 text-5xl font-bold text-center my-20 hover:text-blue-500 text-shadow">お気に入り</sapn>
+                <span class="text-blue-600 text-5xl font-bold text-center my-20 hover:text-blue-500 text-shadow">お気に入り</span>
                 </a>
                 </div>
         </div>

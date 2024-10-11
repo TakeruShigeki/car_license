@@ -13,7 +13,7 @@
         
         <!-- Scripts -->
         {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
-        <link rel="stylesheet" href="/build/assets/app-l3Xj1WLY.css">
+        <link rel="stylesheet" href="/build/assets/app-BiQ6GZ4K.css">
         <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     </head>
@@ -35,6 +35,7 @@
                 {{ $slot }}
             </main>
         </div>
-        <script src="{{asset('js/app.js')}}"></script>
+        <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     </body>
 </html>
