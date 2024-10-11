@@ -7,6 +7,11 @@
         @csrf
         <textarea name="quiz" class="mx-auto py-2 border border-gray-300 rounded-md " id="body" rows="10" style="width: 80%; max-width: 600px; margin: 0 auto; display: block;" >
         </textarea> 
+        <!--画像をアップロード-->
+        <div class="mt-6 text-center">
+            <label class="block font-semibold leading-none text-xl" for="image">画像をアップロード</label>
+            <input type="file" name="image" class="mt-2">
+        </div>
         <div class="flex justify-center space-x-10 mt-6">
             <!-- 〇ボタン -->
             <div class="flex items-center">

@@ -21,10 +21,17 @@ class QuizController extends Controller
     }
     public function store(Request $request)
     {
+    dd($request);
     $quiz = new Quiz();
     $quiz->quiz = $request->quiz;
     $quiz->kind = $request->kind;
     $quiz->commentary = $request->commentary;
+    $quiz->image = $request->image;
+    if (request('image')){
+        $image = request()->file('image')->getClientOriginalName();
+        request()->file('image')->move('storage/images', $image);
+        $quiz->image = $image;
+    }
     $quiz->save();
     $quizzes= Quiz::all();
     return view('car_quiz.index',compact("quizzes"));

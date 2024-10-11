@@ -30,6 +30,12 @@
                     </div>
                     <!-- 問題テキスト -->
                     <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-2xl">・{{$quiz->quiz}}</span>
+                    <!-- 画像 -->
+                    @if($quiz->image)
+                    <div class="text-center mt-6 ">
+                    <img src="{{ asset('storage/images/'.$quiz->image)}}" alt="画像" class="mx-auto" style="width: 50%;">
+                    </div>
+                    @endif
         <!-- 回答ボタンエリア -->
         
         <div class="text-center">

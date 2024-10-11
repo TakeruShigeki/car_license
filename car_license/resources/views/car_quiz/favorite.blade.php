@@ -34,7 +34,12 @@
                 <br>
                 <br>
                 <span class="text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-4xl font-semibold">・{{$quiz->quiz}}</span>
-                    
+                <!--画像-->
+                @if($quiz->image)
+                <div class="text-center mt-6 ">
+                <img src="{{ asset('storage/images/'.$quiz->image)}}" alt="画像" class="mx-auto" style="width: 50%;">
+                </div>
+                @endif
                     @php
                         $color = ($quiz->favorite_flag == 1) ? 'background-color:yellow' : 'background-color:transparent';
                     @endphp
