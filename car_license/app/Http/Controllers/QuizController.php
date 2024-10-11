@@ -21,7 +21,6 @@ class QuizController extends Controller
     }
     public function store(Request $request)
     {
-    dd($request);
     $quiz = new Quiz();
     $quiz->quiz = $request->quiz;
     $quiz->kind = $request->kind;
