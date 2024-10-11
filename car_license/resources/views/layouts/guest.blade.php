@@ -13,7 +13,7 @@
 
         <!-- Scripts -->
         {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
-        <link rel="stylesheet" href="/build/assets/app-PuYW7j6C.css">
+        <link rel="stylesheet" href="/build/assets/app-D5sqhFJp.css">
         <script src="/build/assets/app-BNvkBC0x.js" type="module"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
