@@ -81,6 +81,7 @@ class QuizController extends Controller
     {
         
         $quizzes = Quiz::all();
+        
         return view('car_quiz.favorite', compact("quizzes"));
     }
     

@@ -10,7 +10,6 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net"> 
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link rel="icon" href="{asset('image/rds_014.png')}">
         
         <!-- Scripts -->
         @vite(['resources/js/app.js', 'resources/css/app.css'])
@@ -36,7 +35,7 @@
                 {{ $slot }}
             </main>
         </div>
-        <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
+        {{-- <script src="/build/assets/app-CSsv4iKa.js" type="module"></script> --}}
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  --}}
     </body>
 </html>
