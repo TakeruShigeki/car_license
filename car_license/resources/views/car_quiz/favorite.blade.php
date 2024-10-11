@@ -13,7 +13,7 @@
         
                 <div class="p-5">
                     @php
-                $color = ''; 
+                $color = 'white'; 
                 if ($quiz->favorite) {
                     if($user->id== $quiz->favorite->user_id){
                         if ($quiz->favorite->favorite_flag== 1) {
