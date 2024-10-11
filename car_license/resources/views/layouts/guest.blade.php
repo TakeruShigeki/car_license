@@ -12,8 +12,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/js/app.js', 'resources/css/app.css'])
-        <link rel="stylesheet" href="/build/assets/app-BiQ6GZ4K.css">
+        {{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
+        <link rel="stylesheet" href="/build/assets/app-bu8j_BHp.css">
         <script src="/build/assets/app-CSsv4iKa.js" type="module"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
