@@ -29,7 +29,7 @@
                     
                 <button class="favorite_button font-bold ml-0" 
                 style="{{ $color }}" title="{{ route('ajaxQuizUpdate', [$quiz->id]) }}">
-                <span class=" duration-300 bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500 hover:shadow-lg rounded-full px-4 py-2 transform hover:scale-105">お気に入り</span>
+                <span class="text-white duration-300 bg-gradient-to-r from-slate-500 via-slate-400 to-slate-500 hover:shadow-lg rounded-full px-4 py-2 transform hover:scale-105">お気に入り</span>
                 </button>
                 <br>
                 <br>
