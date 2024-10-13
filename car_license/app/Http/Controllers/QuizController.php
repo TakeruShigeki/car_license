@@ -35,7 +35,7 @@ class QuizController extends Controller
     }
     $quiz->save();
     $quizzes= Quiz::all();
-    return view('car_quiz.index',compact("quizzes"));
+    return view('create',compact("quizzes"));
     }
 
 
