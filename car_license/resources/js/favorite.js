@@ -24,7 +24,7 @@ export const favorite = function () {
                 console.log("お気に入りに追加されました");
             } else if (res == 0) {
                 // 不正解の場合
-                $(this).css("color", "white");
+                $(this).css("color", "");
                 console.log("お気に入りから外れました");
             }
     

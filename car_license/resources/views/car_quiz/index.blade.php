@@ -11,7 +11,7 @@
                     
                     <div class="p-5">
                         @php 
-                    $color = 'white'; 
+                    $color = ''; 
                     if ($quiz->favorite) {
                         $quiz->favorite->user_id;
                         if($user->id == $quiz->favorite->user_id) {
@@ -19,10 +19,10 @@
                             if ($quiz->favorite->favorite_flag == 1) {
                                 $color = 'color:aqua';
                             } else if ($quiz->favorite->favorite_flag == 0) {
-                                $color = 'color:white';
+                                $color = 'color:';
                             }
                         } else if (null == $quiz->favorite->user_id) {
-                            $color = 'color:white';
+                            $color = 'color:';
                         }
                     }
                         @endphp
