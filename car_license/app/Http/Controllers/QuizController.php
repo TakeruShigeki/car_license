@@ -93,7 +93,8 @@ class QuizController extends Controller
                       ->where('favorite_flag', 1); // お気に入りフラグが1のもののみ
             })
             ->get();
-    
+        //ページネーション
+        $quizzes = Quiz::with('favorite')->paginate(10); // 1ページに10件表示
         
         
         return view('car_quiz.favorite', compact("quizzes", 'user'));
