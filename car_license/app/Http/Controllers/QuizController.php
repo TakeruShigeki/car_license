@@ -18,7 +18,16 @@ class QuizController extends Controller
     public function carQuizIndex()
     {   
         $quizzes = Quiz::all();
-        return view('car_quiz.index', compact("quizzes"));
+        $user = Auth::user();
+    
+        // お気に入りのクイズを取得
+        $quizzes = Quiz::with('favorite')
+            ->whereHas('favorite', function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                      ->where('favorite_flag', 1); // お気に入りフラグが1のもののみ
+            })
+            ->get();
+        return view('car_quiz.index', compact("quizzes", 'user'));
     }
     public function store(Request $request)
     {
