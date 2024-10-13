@@ -73,7 +73,7 @@
                         @csrf
                         @method('DELETE')
                         
-                        <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded">削除</button>
+                        <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded" onClick="return confirm('本当に削除しますか？');">削除</button>
                         
                     </form>
                     @endcan
