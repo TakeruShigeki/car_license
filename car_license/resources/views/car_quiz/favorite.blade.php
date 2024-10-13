@@ -75,6 +75,10 @@
                 </div>
             </div>
             @endforeach
+            <!-- ページネーションリンク -->
+        <div class="mt-4">
+            {{ $quizzes->links('vendor.pagination.tailwind') }} <!-- ページネーションのリンク -->
+        </div>
         </div>
     </div>
 
