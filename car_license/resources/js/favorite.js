@@ -26,6 +26,10 @@ export const favorite = function () {
                 // 不正解の場合
                 $(this).css("color", "white");
                 console.log("お気に入りから外れました");
+            }else if (res === null) {
+                // resがnullの場合
+                $(this).css("color", "white");
+                console.log("お気に入り情報がありません");
             }
     
         })
