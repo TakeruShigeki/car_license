@@ -42,3 +42,5 @@ Route::delete('/delete/{quiz_id}',[QuizController::class,'delete'])
 
 
 
+
+

@@ -18,6 +18,8 @@ class QuizController extends Controller
     public function carQuizIndex()
     {   
         $quizzes = Quiz::all();
+        //ページネーション
+        $quizzes = Quiz::with('favorite')->paginate(10); // 1ページに10件表示
         
         return view('car_quiz.index', compact("quizzes"));
     }
@@ -112,4 +114,5 @@ class QuizController extends Controller
     // デバッグ用コードを削除し、リダイレクト
     return redirect()->route('carQuizIndex');
     }
+    
 }

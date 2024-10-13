@@ -80,9 +80,11 @@
             </div>
         </div>
     </div>
-        
-            @endforeach
-        
+        @endforeach
+        <!-- ページネーションリンク -->
+        <div class="mt-4">
+            {{ $quizzes->links('vendor.pagination.tailwind') }} <!-- ページネーションのリンク -->
+        </div>
         </div>
     </div>
 </x-app-layout>
