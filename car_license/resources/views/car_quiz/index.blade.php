@@ -4,7 +4,7 @@
     @endphp
     <div class="container mx-auto py-8 px-4 ">
         <div class=" p-8">
-            <h1 class="text-stone-700/80 text-3xl font-bold text-center mb-6 ">問題一覧</h1>
+            <h1 class="text-stone-700/80 text-3xl font-bold text-center mb-6">問題一覧</h1>
             @foreach ($quizzes as $quiz)
             <div class="p-8 rounded-lg shadow-xl mb-6 ">
                 
@@ -25,7 +25,7 @@
                             $color = 'color:white';
                         }
                     }
-                    @endphp
+                        @endphp
                     <!-- お気に入りボタン -->
                     <button class="favorite_button font-bold ml-0" 
                         style="{{ $color }}" title="{{ route('ajaxQuizUpdate', [$quiz->id]) }}">
@@ -33,7 +33,7 @@
                     </button>
                     </div>
                     <!-- 問題テキスト -->
-                    <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-2xl">・{{$quiz->quiz}}</span>
+                    <span class="font-semibold text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-2xl" >・{{$quiz->quiz}}</span>
                     <!-- 画像 -->
                     @if($quiz->image)
                     <div class="text-center mt-6 ">
