@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use App\Models\Favorite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class QuizController extends Controller
@@ -76,15 +77,26 @@ class QuizController extends Controller
     }
     return $favorite->favorite_flag;
 }
-// 削除機能
+
     public function favoriteQuizIndex()
     {
         
-        $quizzes = Quiz::all();
-        
-        return view('car_quiz.favorite', compact("quizzes"));
-    }
+        $user = Auth::user();
     
+        // お気に入りのクイズを取得
+        $quizzes = Quiz::with('favorite')
+            ->whereHas('favorite', function ($query) use ($user) {
+                $query->where('user_id', $user->id)
+                      ->where('favorite_flag', 1); // お気に入りフラグが1のもののみ
+            })
+            ->get();
+    
+        
+        
+        return view('car_quiz.favorite', compact("quizzes", 'user'));
+    }
+
+    // 削除機能
     public function delete($quiz_id)
     {
         // まず、クイズを削除
