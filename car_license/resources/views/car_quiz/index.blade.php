@@ -1,4 +1,7 @@
 <x-app-layout>
+    @php
+    $user = Auth::user();
+    @endphp
     <div class="container mx-auto py-8 px-4 ">
         <div class=" p-8">
             <h1 class="text-stone-700/80 text-3xl font-bold text-center mb-6 ">問題一覧</h1>
@@ -7,20 +10,21 @@
                 
                     
                     <div class="p-5">
-                        @php
-                    $user = Auth()->user();
-                    $color = 'white';
+                        @php 
+                    $color = 'white'; 
                     if ($quiz->favorite) {
-                    if($user->id== $quiz->favorite->user_id){
-                        if ($quiz->favorite->favorite_flag== 1) {
-                            $color = 'color:aqua';
-                        }else if($quiz->favorite->favorite_flag== 0){
+                        $quiz->favorite->user_id;
+                        if($user->id == $quiz->favorite->user_id) {
+                            $quiz->favorite->favorite_flag;
+                            if ($quiz->favorite->favorite_flag == 1) {
+                                $color = 'color:aqua';
+                            } else if ($quiz->favorite->favorite_flag == 0) {
+                                $color = 'color:white';
+                            }
+                        } else if (null == $quiz->favorite->user_id) {
                             $color = 'color:white';
                         }
-                    }else if(null==$quiz->favorite->user_id){
-                        $color = 'color:white';
                     }
-                }
                     @endphp
                     <!-- お気に入りボタン -->
                     <button class="favorite_button font-bold ml-0" 
