@@ -3,6 +3,7 @@
     <div class="min-h-screen bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 ">
     <div class="w-full flex flex-col">
         
+        
         <label for="body" name="quiz" class="font-semibold leading-none mt-4 text-center text-4xl ">問題文</label>
         <form method="post" action="{{route('storeQuiz')}}" enctype="multipart/form-data">
         @csrf
